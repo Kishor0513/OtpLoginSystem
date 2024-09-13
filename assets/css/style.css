@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+	--blue: #45f3ff;
+	--pink: #d9138a;
+	--black-bg: #353434;
+	--grey: #8f8f8f;
+	--light-color: #666;
+	--black: #23233a;
+	--bg:#1a1d25;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: var(--black-bg);
+	color: white;
+}
+
+.login-container {
+	position: relative;
+	width: 370px;
+	height: 450px;
+	background: var(--black);
+	border-radius: 50px 5px;
+	overflow: hidden;
+}
+.login-container::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 370px;
+	height: 450px;
+	background: linear-gradient(60deg, transparent, var(--blue), var(--blue));
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+}
+.login-container::after {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 370px;
+	height: 450px;
+	background: linear-gradient(60deg, transparent, var(--pink), var(--pink));
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+	animation-delay: -3s;
+}
+
+@keyframes animate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.login-container form {
+	position: absolute;
+	inset: 2px;
+	border-radius: 50px 5px;
+	background: var(--bg);
+	z-index: 10;
+	padding: 30px 40px;
+	display: flex;
+	flex-direction: column;
+}
+.login-container h3 {
+	color: var(--blue);
+	font-size: 35px;
+	font-weight: 500;
+	text-align: center;
+}
+.login-container .inputBox {
+	position: relative;
+	width: 300px;
+	margin-top: 35px;
+}
+.login-container .inputBox input {
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--black);
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	z-index: 10;
+}
+.login-container input[type='submit'] {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	background: var(--blue);
+	padding: 5px;
+	margin-top: 60px;
+	border-radius: 90px;
+	font-weight: 600;
+	cursor: pointer;
+	
+}
+.login-container input[type='submit']:active {
+	background: linear-gradient(90deg, var(--blue), var(--pink));
+	opacity: 0.8;
+}
+.login-container .inputBox span {
+	position: absolute;
+	left: 0;
+	padding: 20px 10px 10px;
+	font-size: 1em;
+	color: var(--grey);
+	pointer-events: none;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+}
+.login-container .inputBox input:valid ~ span,
+.login-container .inputBox input:focus ~ span {
+	color: var(--blue);
+	transform: translateX(-10px) translateY(-30px);
+	font-size: 0.75em;
+}
+.login-container .inputBox i {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: var(--blue);
+	border-radius: 4px;
+	transition: 0.5s;
+	pointer-events: none;
+	z-index: 9;
+}
+.login-container .inputBox input:valid ~ i,
+.login-container .inputBox input:focus ~ i {
+	height: 44px;
+}
+.login-container .links {
+	display: flex;
+	justify-content: space-between;
+}
+.login-container .links a {
+	margin: 25px 0;
+	font-size: 1em;
+	color: var(--grey);
+	text-decoration: none;
+}
+.login-container .links a:hover,
+.links a:nth-child(2) {
+	color: var(--pink);
+}
+.register-container {
+	position: relative;
+	width: 370px;
+	height: 570px;
+	background: var(--black);
+	border-radius: 50px 5px;
+	overflow: hidden;
+}
+.register-container::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 370px;
+	height: 570px;
+	background: linear-gradient(60deg, transparent, var(--blue), var(--blue));
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+}
+.register-container::after {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 370px;
+	height: 570px;
+	background: linear-gradient(60deg, transparent, var(--pink), var(--pink));
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+	animation-delay: -3s;
+}
+.register-container form {
+	position: absolute;
+	inset: 2px;
+	border-radius: 50px 5px;
+	background: var(--bg);
+	z-index: 10;
+	padding: 30px 30px;
+	display: flex;
+	flex-direction: column;
+}
+.register-container h3 {
+	color: var(--blue);
+	font-size: 25px;
+	font-weight: 500;
+	text-align: center;
+}
+.register-container .inputBox {
+	position: relative;
+	width: 300px;
+	margin-top: 20px;
+}
+.register-container .inputBox input {
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #23233a;
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	z-index: 10;
+}
+.register-container input[type='submit'] {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	background: var(--blue);
+	padding: 5px;
+	margin-top: 40px;
+	border-radius: 90px;
+	font-weight: 600;
+	cursor: pointer;
+}
+.register-container input[type='submit']:active {
+	background: linear-gradient(90deg, var(--blue), var(--pink));
+	opacity: 0.8;
+}
+.register-container .inputBox span {
+	position: absolute;
+	left: 0;
+	padding: 20px 10px 10px;
+	font-size: 0.8em;
+	color: var(--grey);
+	pointer-events: none;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+}
+.register-container .inputBox input:valid ~ span,
+.register-container .inputBox input:focus ~ span {
+	color: var(--blue);
+	transform: translateX(-10px) translateY(-30px);
+	font-size: 0.75em;
+}
+.register-container .inputBox i {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: var(--blue);
+	border-radius: 4px;
+	transition: 0.5s;
+	pointer-events: none;
+	z-index: 9;
+}
+.register-container .inputBox input:valid ~ i,
+.register-container .inputBox input:focus ~ i {
+	height: 44px;
+}
+.register-container .links {
+	display: flex;
+	justify-content: space-between;
+}
+.register-container .links a {
+	margin: 25px 0;
+	font-size: 1em;
+	color: var(--grey);
+	text-decoration: none;
+}
+.register-container .links a:hover,
+.links a:nth-child(2) {
+	color: var(--pink);
+}
+.otp-container {
+	position: relative;
+	width: 370px;
+	height: 450px;
+	background: var(--black);
+	border-radius: 50px 5px;
+	overflow: hidden;
+}
+.otp-container::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 370px;
+	height: 450px;
+	background: linear-gradient(60deg, transparent, var(--blue), var(--blue));
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+}
+.otp-container::after {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 370px;
+	height: 450px;
+	background: linear-gradient(60deg, transparent, var(--pink), var(--pink));
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+	animation-delay: -3s;
+}
+.otp-container form {
+	position: absolute;
+	inset: 2px;
+	border-radius: 50px 5px;
+	background: var(--bg);
+	z-index: 10;
+	padding: 30px 30px;
+	display: flex;
+	flex-direction: column;
+}
+.otp-container h3 {
+	color: var(--blue);
+	font-size: 35px;
+	font-weight: 500;
+	text-align: center;
+}
+.otp-container .inputBox {
+	position: relative;
+	width: 300px;
+	margin-top: 35px;
+}
+.otp-container .inputBox input {
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--black);
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	z-index: 10;
+}
+.otp-container input[type='submit'] {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	background: var(--blue);
+	padding: 5px;
+	margin-top: 40px;
+	border-radius: 90px;
+	font-weight: 600;
+	cursor: pointer;
+}
+.otp-container input[type='submit']:active {
+	background: linear-gradient(90deg, var(--blue), var(--pink));
+	opacity: 0.8;
+}
+.otp-container .inputBox span {
+	position: absolute;
+	left: 0;
+	padding: 20px 10px 10px;
+	font-size: 1em;
+	color: var(--grey);
+	pointer-events: none;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+}
+.otp-container .inputBox input:valid ~ span,
+.otp-container .inputBox input:focus ~ span {
+	color: var(--blue);
+	transform: translateX(-10px) translateY(-30px);
+	font-size: 0.75em;
+}
+.otp-container .inputBox i {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: var(--blue);
+	border-radius: 4px;
+	transition: 0.5s;
+	pointer-events: none;
+	z-index: 9;
+}
+.otp-container .inputBox input:valid ~ i,
+.otp-container .inputBox input:focus ~ i {
+	height: 44px;
+}
+.otp-container .links {
+	display: flex;
+	justify-content: space-between;
+}
+.otp-container .links a {
+	margin: 25px 0;
+	font-size: 1em;
+	color: var(--grey);
+	text-decoration: none;
+}
+.otp-container .links a:hover,
+.links a:nth-child(2) {
+	color: var(--pink);
+}
+.password-container {
+	position: relative;
+	width: 370px;
+	height: 450px;
+	background: var(--black);
+	border-radius: 50px 5px;
+	overflow: hidden;
+}
+.password-container::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 370px;
+	height: 450px;
+	background: linear-gradient(60deg, transparent, var(--blue), var(--blue));
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+}
+.password-container::after {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 370px;
+	height: 450px;
+	background: linear-gradient(60deg, transparent, var(--pink), var(--pink));
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+	animation-delay: -3s;
+}
+.password-container form {
+	position: absolute;
+	inset: 2px;
+	border-radius: 50px 5px;
+	background: var(--bg);
+	z-index: 10;
+	padding: 30px 30px;
+	display: flex;
+	flex-direction: column;
+}
+.password-container h3 {
+	color: var(--blue);
+	font-size: 35px;
+	font-weight: 500;
+	text-align: center;
+}
+.password-container .inputBox {
+	position: relative;
+	width: 300px;
+	margin-top: 35px;
+}
+.password-container .inputBox input {
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--black);
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	z-index: 10;
+}
+.password-container input[type='submit'] {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	background: var(--blue);
+	padding: 5px;
+	margin-top: 75px;
+	border-radius: 90px;
+	font-weight: 600;
+	cursor: pointer;
+}
+.password-container input[type='submit']:active {
+	background: linear-gradient(90deg, var(--blue), var(--pink));
+	opacity: 0.8;
+}
+.password-container .inputBox span {
+	position: absolute;
+	left: 0;
+	padding: 20px 10px 10px;
+	font-size: 1em;
+	color: var(--grey);
+	pointer-events: none;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+}
+.password-container .inputBox input:valid ~ span,
+.password-container .inputBox input:focus ~ span {
+	color: var(--blue);
+	transform: translateX(-10px) translateY(-30px);
+	font-size: 0.75em;
+}
+.password-container .inputBox i {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: var(--blue);
+	border-radius: 4px;
+	transition: 0.5s;
+	pointer-events: none;
+	z-index: 9;
+}
+.password-container .inputBox input:valid ~ i,
+.password-container .inputBox input:focus ~ i {
+	height: 44px;
+}
+.password-container .links {
+	display: flex;
+	justify-content: space-between;
+}
+.password-container .links a {
+	margin: 25px 0;
+	font-size: 1em;
+	color: var(--grey);
+	text-decoration: none;
+}
+.password-container .links a:hover,
+.links a:nth-child(2) {
+	color: var(--pink);
+}
